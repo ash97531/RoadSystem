@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+
+    </style>
+
+    <button id="button">
+        click
+    </button>
+    <button id="delete">
+        delete
+    </button>
+    <div id="green" style="height: 400px; border: thick solid blue; width: 400px; position: absolute; top: 300px; left: 300px; background-color: aquamarine;">
+        hello
+    </div>
+    <div id="red" style="height: 400px; width: 400px; position: absolute; top: 300px; left: 300px; background-color: rgb(255, 36, 7);">
+        hello
+    </div>
+    <div id="yeah">
+        yes
+    </div>
+
+    <script>
+        var b = function(event){
+            document.getElementById('green').style.visibility = 'visible';
+            document.getElementById('green').style.zIndex = 100;
+            // document.style.pointerevents
+        }
+        var del = function(event){
+            document.getElementById('green').style.visibility = 'collapse';
+        }
+        var clicked = function(event){
+            console.log(event.target.id);
+        }
+        document.getElementById('button').addEventListener("click", b);
+        document.getElementById('delete').addEventListener("click", del);
+        document.getElementById('green').addEventListener("click", clicked);
+        document.getElementById('red').addEventListener("click", clicked);
+        document.addEventListener("click", clicked);
+    </script>
+</body>
+</html>
